@@ -1,0 +1,309 @@
+{
+	"info": {
+		"_postman_id": "43b09ec9-2386-4583-8ee4-8404b0415f04",
+		"name": "Practicapp API",
+		"description": "Colección mínima para probar roles ESTUDIANTE y PROFESOR sobre prácticas.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44698952",
+		"_collection_link": "https://marcela-4506111.postman.co/workspace/marcela's-Workspace~ddef2a89-bcd3-4983-8a45-33d4308783cf/collection/44698952-43b09ec9-2386-4583-8ee4-8404b0415f04?action=share&source=collection_link&creator=44698952"
+	},
+	"item": [
+		{
+			"name": "Estudiante - Leer prácticas",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "USER-ID",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "ROL",
+						"value": "ESTUDIANTE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"listar"
+					]
+				},
+				"description": "ESTUDIANTE: leer (listar) todas sus prácticas registradas, filtradas por USER-ID."
+			},
+			"response": []
+		},
+		{
+			"name": "Error - ID Estudiante no existe",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "USER-ID",
+						"value": "100",
+						"type": "text"
+					},
+					{
+						"key": "ROL",
+						"value": "ESTUDIANTE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Profesor - Listar todas las prácticas",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Estudiante - Agregar práctica",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "USER-ID",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "ROL",
+						"value": "ESTUDIANTE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"fechaini\": \"2025-03-10\",\n  \"fechafin\": \"2025-06-10\",\n  \"descripcion\": \"Desarrollo de sitio web institucional con HTML, CSS y JS\",\n  \"empresa\": \"DigitalWeb SPA\",\n  \"jefePractica\": \"María López\",\n  \"estudianteId\": 1,\n  \"profesorId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"crear"
+					]
+				},
+				"description": "ESTUDIANTE: agregar una nueva práctica propia (USER-ID se usa como estudianteId)."
+			},
+			"response": []
+		},
+		{
+			"name": "Profesor - Agregar práctica",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "USER-ID",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "ROL",
+						"value": "PROFESOR",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"fechaini\": \"2025-04-01\",\n  \"fechafin\": \"2025-07-15\",\n  \"descripcion\": \"Implementación de API REST con Spring Boot\",\n  \"empresa\": \"SoftTech Ltda\",\n  \"jefePractica\": \"Luis Ramírez\",\n  \"estudianteId\": 1,\n  \"profesorId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"crear"
+					]
+				},
+				"description": "PROFESOR: agregar una práctica en nombre de cualquier estudiante."
+			},
+			"response": []
+		},
+		{
+			"name": "Profesor - Actualizar práctica",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "USER-ID",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "ROL",
+						"value": "PROFESOR",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"fechaini\": \"2025-03-20\",\n  \"fechafin\": \"2025-05-30\",\n  \"descripcion\": \"Actualización del módulo de autenticación con implementación de JWT\",\n  \"empresa\": \"TechSolutions SPA\",\n  \"jefePractica\": \"Carlos Moreno\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/actualizar/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"actualizar",
+						"1"
+					]
+				},
+				"description": "PROFESOR: actualizar información de una práctica (fechas/descripción)."
+			},
+			"response": []
+		},
+		{
+			"name": "Profesor - Eliminar práctica",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "USER-ID",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "ROL",
+						"value": "PROFESOR",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/eliminar/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"eliminar",
+						"1"
+					]
+				},
+				"description": "PROFESOR: eliminar registros de prácticas obsoletos o incorrectos."
+			},
+			"response": []
+		},
+		{
+			"name": "Error - ID para eliminar no existe",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "USER-ID",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "ROL",
+						"value": "PROFESOR",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/eliminar/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"eliminar",
+						"100"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080"
+		},
+		{
+			"key": "studentId1",
+			"value": "1"
+		},
+		{
+			"key": "studentId2",
+			"value": "2"
+		},
+		{
+			"key": "professorId1",
+			"value": "1"
+		},
+		{
+			"key": "practiceId1",
+			"value": "1"
+		}
+	]
+}
