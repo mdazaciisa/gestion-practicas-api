@@ -126,3 +126,13 @@ Las tablas principales utilizadas son:
 - practicas
 
 La columna `activo` en la tabla `practicas` permite implementar eliminación lógica.
+
+---
+
+## 🔗 Documentación Swagger
+La API cuenta con documentación interactiva generada con Swagger UI, donde puedes explorar todos los endpoints, probar solicitudes y ver los modelos.
+
+[Acceder a Swagger UI](http://localhost:8080/swagger-ui/index.html)
+
+⚠️ Nota: El link anterior funciona cuando la aplicación se está ejecutando localmente.
+Si la API está desplegada en un servidor, reemplaza localhost:8080 por la URL correspondiente.
