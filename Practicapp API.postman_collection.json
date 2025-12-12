@@ -121,11 +121,6 @@
 						"key": "ROL",
 						"value": "ESTUDIANTE",
 						"type": "text"
-					},
-					{
-						"key": "Cache-Control",
-						"value": "no-cache",
-						"type": "text"
 					}
 				],
 				"body": {
@@ -171,11 +166,6 @@
 					{
 						"key": "ROL",
 						"value": "PROFESOR",
-						"type": "text"
-					},
-					{
-						"key": "Cache-Control",
-						"value": "no-cache",
 						"type": "text"
 					}
 				],
